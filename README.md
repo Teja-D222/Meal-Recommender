@@ -87,37 +87,11 @@ The system is built using **PySpark and Spark MLlib**, optimized for **big data 
 ![image](https://github.com/user-attachments/assets/b9bc7258-dab0-4acb-ab28-45ec127cb5f9)
 
 
-## Model Results
-
-![image](https://github.com/user-attachments/assets/d06ff81a-577b-4d89-960d-bc85ec46a412)
 
 
-## 🤖 Final Model – Random Forest
-
-### 🔍 Performance Overview
-- Achieved **74% accuracy**
-- High **precision and recall** for frequent meal plans
-- Low misclassification on common categories
-- Strong **F1 Score**, indicating balanced performance
-
-### 💼 Business Insights
-- Enables **scalable meal planning** in wellness apps
-- Automates basic nutrition logic for dietitians
-- Adds differentiation to health tech platforms
-
-### 🏥 Real-Life Impact
-- Supports better health decisions with informed recommendations
-- Reduces allergy risk with built-in constraints
-- Promotes preventive care via smart meal suggestions
 
 
-## ✅ Conclusion
 
-This project validates the use of a **Random Forest classifier** for recommending meal plans based on gut microbiome and lifestyle data. The model demonstrated strong predictive performance, especially for common diet plans, by learning complex patterns in user microbiome and intake profiles.
-
-**Clinically**, it aligns with evidence-based nutritional science—for example, matching high *Proteobacteria* with fiber-boosting plans, or recommending low-sugar plans for higher BMI users.
-
-**Commercially**, the system offers a scalable, AI-powered foundation for personalized nutrition platforms and wellness solutions.
 
 
 
