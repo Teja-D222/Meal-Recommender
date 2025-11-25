@@ -1,150 +1,146 @@
-# Meal-Recommender
-A machine-learning approach for personalized nutrition guidance
+# Meal Recommender – AI-Powered Personalized Nutrition
 
-## Project Overview
-This project builds a personalized meal recommendation system using Gradient Boosted Trees (GBT).
-The goal is to analyze an individual’s gut health profile, dietary habits, and nutritional indicators to recommend meals that support a healthier microbiome.
-Previously, a Decision Tree classifier was developed and evaluated. However, due to the complexity and noisiness of the dataset, we transitioned to Gradient Boosted Trees, which offer improved predictive performance through boosting and ensemble learning.
-This repository contains:
-✔ Exploratory Data Analysis (EDA)
-✔ Feature engineering + preprocessing steps
-✔ Gradient Boosted Trees model development
-✔ Model evaluation metrics
-✔ Interpretation of key predictive features
-✔ Code notebook for reproducibility
 
-## Motivation
-Healthy gut function plays a major role in digestion, immunity, inflammation, and even mood. Personalized nutrition powered by machine learning can help individuals make data-driven meal choices that better support their microbiome.
-Gradient Boosted Trees (GBTs) are especially effective here because they:
+## 📌 Problem Statement
 
+In recent years, the connection between **gut microbiome composition**, **dietary habits**, and **overall health** has gained significant attention. Personalized nutrition—especially meal planning based on gut health indicators and lifestyle factors—offers a promising path toward improving **metabolic**, **digestive**, and **inflammatory conditions**.
 
-Handle non-linear relationships among diet + health indicators
+The goal of this project is to develop a **scalable machine learning model** that can predict **personalized meal plans** based on:
+- Gut microbiome profile (e.g., Bacteroides, Firmicutes)
+- Dietary intake (protein, fiber, carbohydrate, fat)
+- Demographic features (age, gender, BMI)
+- Food allergy data
 
+The system is built using **PySpark and Spark MLlib**, optimized for **big data environments**, with interpretable visualizations and clinically relevant outcomes.
 
-Perform well with mixed data types
 
+## 📂 Data Selection
 
-Are resilient to moderate noise
+**Source**: American Gut Project and lifestyle survey data
 
+**Data Features**:
+- **Microbiome Indicators**: Bacteroides, Firmicutes, Lactobacillus, etc.
+- **Demographics**: Age, Gender, BMI
+- **Nutrient Intake**: Protein, Fiber, Carbohydrates, Fat
+- **Allergies**: Dairy, Gluten, Nuts
+ 
+![image](https://github.com/user-attachments/assets/4d5e8469-7a10-4ccb-afb5-0b96bb4dd458)
 
-Provide feature importance insights, improving interpretability
+![image](https://github.com/user-attachments/assets/edf7ba60-a764-4192-8f90-7c6ab51d5f8b)
 
 
-## Tech Stack
+## 📊 Exploratory Data Analysis (EDA)
 
+- Most users consume **moderate levels** of protein and fiber.
+- **Meal plan labels are imbalanced**, heavily skewed toward a few diets.
+- Age and BMI trends vary across plans, suggesting feature relevance.
 
-Python
+**Challenges Identified**:
+- Significant **class imbalance** in target labels.
+  
+![image](https://github.com/user-attachments/assets/c8b78876-1a55-4137-9626-edcf5d0f5ac4)
 
+![image](https://github.com/user-attachments/assets/b81fb764-2c04-4453-8384-c11eefd36e2b)
 
-Pandas, NumPy
+![image](https://github.com/user-attachments/assets/ff4b55a3-f7d1-409b-8408-ba589379d78b)
 
 
-Scikit-learn (GradientBoostingClassifier, preprocessing, metrics)
+## 🧠 Model Selection
 
+### 1. Logistic Regression (Baseline)
+- Interpretable and fast
+- Limited in handling non-linear relationships
 
-Matplotlib / Seaborn (EDA + visualization)
+### 2. Decision Tree
+- Easy to interpret
+- Prone to overfitting with class imbalance
 
+### 3. Random Forest ✅ *(Chosen Model)*
+- Handles non-linearity and mixed feature types
+- Reduced overfitting; better overall performance
 
-Jupyter Notebook
+### 4. Gradient Boosted Trees (GBT) + One-vs-Rest
+- High potential for accuracy
+- More resource intensive and complex to tune
 
-## Exploratory Data Analysis (EDA)
-The notebook includes:
 
+## 🛠️ Data Preparation
 
-Distribution of key gut-health attributes
+- **Categorical Encoding**: Converted text labels like “High Protein” into numeric indices
+- **Allergy Normalization**: Cleaned inconsistent allergy formats
+- **Class Balancing**:
+  - Method 1: Upsample minority classes
+  - Method 2: Merge similar rare classes and resample
 
 
-Macro/micronutrient correlations
+## 📌 Feature Selection
 
+### Method 1: Correlation Matrix
+- Assessed relationships between numeric variables
 
-Outlier detection
+![image](https://github.com/user-attachments/assets/c5077e1a-6997-4b9c-8fd7-e244316d1545)
 
+### Method 2
+- Chi Square test to select the categorical features
+- Correlation matrix to assess the independence of each numerical variable
+  
+![image](https://github.com/user-attachments/assets/b9bc7258-dab0-4acb-ab28-45ec127cb5f9)
 
-Feature relationships and patterns
 
+## Model Results
 
-Data cleaning + imbalance handling
+![image](https://github.com/user-attachments/assets/d06ff81a-577b-4d89-960d-bc85ec46a412)
 
 
-## Model Development
-### 1. Preprocessing
+## 🤖 Final Model – Random Forest
 
+### 🔍 Performance Overview
+- Achieved **74% accuracy**
+- High **precision and recall** for frequent meal plans
+- Low misclassification on common categories
+- Strong **F1 Score**, indicating balanced performance
 
-Handling missing values
+### 💼 Business Insights
+- Enables **scalable meal planning** in wellness apps
+- Automates basic nutrition logic for dietitians
+- Adds differentiation to health tech platforms
 
+### 🏥 Real-Life Impact
+- Supports better health decisions with informed recommendations
+- Reduces allergy risk with built-in constraints
+- Promotes preventive care via smart meal suggestions
 
-One-hot encoding for categorical features
 
+## ✅ Conclusion
 
-Normalization/standardization
+This project validates the use of a **Random Forest classifier** for recommending meal plans based on gut microbiome and lifestyle data. The model demonstrated strong predictive performance, especially for common diet plans, by learning complex patterns in user microbiome and intake profiles.
 
+**Clinically**, it aligns with evidence-based nutritional science—for example, matching high *Proteobacteria* with fiber-boosting plans, or recommending low-sugar plans for higher BMI users.
 
-Balancing class distribution
+**Commercially**, the system offers a scalable, AI-powered foundation for personalized nutrition platforms and wellness solutions.
 
 
-Feature selection based on correlation analysis
 
 
-### 2. Model
-We train a Gradient Boosted Trees (GBT) model to classify each input into meal categories most suitable for the individual’s health profile.
-### 3. Evaluation
-Metrics include:
 
 
-Accuracy
 
 
-Precision / Recall / F1-score
 
 
-Confusion matrix
 
 
-Feature importance ranking
 
 
-GBT provided a significant improvement in performance compared to the standalone Decision Tree model.
 
-## Results Summary
 
 
-Improved model robustness and generalization
 
 
-Reduced overfitting compared to Decision Trees
 
 
-High impact features include:
 
 
-Nutrient ratios
 
 
-Age & BMI
-
-
-Microbiome indicators
-
-
-Dietary patterns
-
-
-## Future Improvements
-
-
-Add deep learning models for more nuanced predictions
-
-
-Build a frontend UI for interactive meal recommendations
-
-
-Integrate real microbiome sequencing data
-
-
-Deploy the model via API or web app
-
-
-
-## Acknowledgments
-This project is part of a larger study exploring machine learning applications in personalized nutrition and gut-health analytics.
 
