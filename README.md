@@ -13,7 +13,7 @@ This repository contains:
 ✔ Interpretation of key predictive features
 ✔ Code notebook for reproducibility
 
-🧠 Motivation
+## Motivation
 Healthy gut function plays a major role in digestion, immunity, inflammation, and even mood. Personalized nutrition powered by machine learning can help individuals make data-driven meal choices that better support their microbiome.
 Gradient Boosted Trees (GBTs) are especially effective here because they:
 
@@ -30,8 +30,7 @@ Are resilient to moderate noise
 Provide feature importance insights, improving interpretability
 
 
-
-🛠️ Tech Stack
+## Tech Stack
 
 
 Python
@@ -48,16 +47,7 @@ Matplotlib / Seaborn (EDA + visualization)
 
 Jupyter Notebook
 
-
-
-📂 Project Structure
-│── GBT model for Gut Meal Recommendation.ipynb
-│── data/                   # (optional) dataset files  
-│── images/                 # plots, EDA visuals  
-│── README.md
-
-
-🔍 Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 The notebook includes:
 
 
@@ -76,9 +66,8 @@ Feature relationships and patterns
 Data cleaning + imbalance handling
 
 
-
-🧪 Model Development
-1️⃣ Preprocessing
+## Model Development
+### 1. Preprocessing
 
 
 Handling missing values
@@ -96,9 +85,9 @@ Balancing class distribution
 Feature selection based on correlation analysis
 
 
-2️⃣ Model
+### 2. Model
 We train a Gradient Boosted Trees (GBT) model to classify each input into meal categories most suitable for the individual’s health profile.
-3️⃣ Evaluation
+### 3. Evaluation
 Metrics include:
 
 
@@ -116,7 +105,7 @@ Feature importance ranking
 
 GBT provided a significant improvement in performance compared to the standalone Decision Tree model.
 
-📊 Results Summary
+## Results Summary
 
 
 Improved model robustness and generalization
@@ -140,22 +129,7 @@ Microbiome indicators
 Dietary patterns
 
 
-
-
-Final model used to classify meal recommendations tailored to the user’s health profile
-
-
-
-🚀 How to Use
-Clone the repository:
-git clone https://github.com/your-username/gut-meal-recommendation.git
-
-Open the notebook:
-jupyter notebook "GBT model for Gut Meal Recommendation.ipynb"
-
-Run all cells to reproduce the analysis and model training.
-
-📈 Future Improvements
+## Future Improvements
 
 
 Add deep learning models for more nuanced predictions
@@ -171,11 +145,6 @@ Deploy the model via API or web app
 
 
 
-🙌 Acknowledgments
+## Acknowledgments
 This project is part of a larger study exploring machine learning applications in personalized nutrition and gut-health analytics.
 
-If you want, I can also:
-✨ generate a GitHub banner image
-✨ create a project summary for LinkedIn
-✨ help restructure the notebook into a clean .py pipeline
-✨ prepare a Tableau dashboard using this dataset
