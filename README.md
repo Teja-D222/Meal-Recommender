@@ -47,17 +47,14 @@ The system is built using **PySpark and Spark MLlib**, optimized for **big data 
 
 ## 🧠 Model Selection
 
-### 1. Logistic Regression (Baseline)
+I considered several models that would generate approproate results. 
+### 1. Logistic Regression
 - Interpretable and fast
 - Limited in handling non-linear relationships
 
 ### 2. Decision Tree
 - Easy to interpret
 - Prone to overfitting with class imbalance
-
-### 3. Random Forest ✅ *(Chosen Model)*
-- Handles non-linearity and mixed feature types
-- Reduced overfitting; better overall performance
 
 ### 4. Gradient Boosted Trees (GBT) + One-vs-Rest
 - High potential for accuracy
@@ -85,36 +82,3 @@ The system is built using **PySpark and Spark MLlib**, optimized for **big data 
 - Correlation matrix to assess the independence of each numerical variable
   
 ![image](https://github.com/user-attachments/assets/b9bc7258-dab0-4acb-ab28-45ec127cb5f9)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
