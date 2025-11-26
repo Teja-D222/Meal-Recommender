@@ -95,7 +95,7 @@ These conditions aligned perfectly with our dataset.
 ![image](https://github.com/user-attachments/assets/b9bc7258-dab0-4acb-ab28-45ec127cb5f9)
 
 ## Gradient Boosted Trees (GBT) – Model Results
-###Performance Overview
+### Performance Overview
 Delivered competitive accuracy, showing strong learning of complex interactions
 Performed especially well on non-linear microbiome–nutrition relationships
 Showed improved sensitivity to underrepresented diet categories compared to baseline models
