@@ -60,6 +60,17 @@ I considered several models that would generate approproate results.
 - High potential for accuracy
 - More resource intensive and complex to tune
 
+Our dataset presented several real-world challenges:
+Non-linear relationships between microbiome features and meal plan categories
+Mixed data types (nutrient levels, demographics, categorical allergies)
+Significant class imbalance across diet labels
+Interactions that simpler models (like logistic regression) cannot capture
+To address these issues, I chose Gradient Boosted Trees, a model that builds an ensemble of trees sequentially, with each new tree correcting the errors of the previous ones. This makes GBT particularly effective when:
+Patterns are complex
+Features interact
+Data is messy or noisy
+High accuracy is essential
+These conditions aligned perfectly with our dataset.
 
 ## 🛠️ Data Preparation
 
