@@ -93,3 +93,24 @@ These conditions aligned perfectly with our dataset.
 - Correlation matrix to assess the independence of each numerical variable
   
 ![image](https://github.com/user-attachments/assets/b9bc7258-dab0-4acb-ab28-45ec127cb5f9)
+
+## Gradient Boosted Trees (GBT) – Model Results
+###Performance Overview
+Delivered competitive accuracy, showing strong learning of complex interactions
+Performed especially well on non-linear microbiome–nutrition relationships
+Showed improved sensitivity to underrepresented diet categories compared to baseline models
+Demonstrated strong F1 performance, indicating balanced prediction quality even in the presence of class imbalance
+Reduced error on categories that were previously misclassified by Decision Trees
+Highlighted feature interactions (e.g., fiber × Lactobacillus, BMI × fat intake) that simpler models could not capture
+### Business Insights
+GBT modeling reveals high-value predictive features, helping nutrition platforms understand why certain meal plans are recommended
+Enables more fine-grained personalization, especially for users whose microbiome or diet patterns don’t fit common categories
+Helps improve precision in recommendations, reducing misleading or overly generic diet suggestions
+Can enhance premium wellness product offerings by supporting advanced personalization tiers
+Provides model interpretability through feature importance for dietitians and nutrition scientists
+### Real-Life Impact
+Supports evidence-based nutritional planning, especially when microbiome data contains complex patterns
+Improves recommendations for users with nuanced health profiles (e.g., borderline BMI, mixed allergy data, mild dysbiosis)
+Helps reduce misaligned diet suggestions through more accurate classification
+Strengthens proactive, preventive health interventions, such as fiber-rich diets for low-diversity microbiomes
+Builds trust with end users by powering more accurate and clinically aligned diet recommendations
